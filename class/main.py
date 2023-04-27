@@ -30,9 +30,12 @@ cliente2.__dict__
 
 #### ENCAPSULAMENTO
 cliente3 = Nubank('Rosa',280,45,'Av. Ciquentenário',3)
+# essa função __dict__ consegue mostrar o valor nas variáveis ocultas.
 cliente3.__dict__
 
-# Não é permitido acesse os atributos
+# Não é permitido acesse os atributos diretamente assim.
 cliente3.__bonus
-
 cliente3.__taxaFinanciamento
+
+cliente3.aplicarDesconto(5)
+

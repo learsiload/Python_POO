@@ -12,13 +12,17 @@ from produtos.Casa import Casa
 class Nubank(Casa):
     
     # Esse seria um atributo private por causa dos dois underline antes do nome
-    __bonus = -0.05
+    __bonus = 2
 
     def __init__(self, cor, tamanho, numero, rua, qtComodos):
         # Exemplo de outro atributo private
         self.__taxaFinanciamento = 0.8
         super().__init__(cor, tamanho, numero, rua, qtComodos)
 
+    @property
+    def aplicarDesconto(self,valor:float):
+        self.valorComDesconto = valor # - (valor * self.__bonus)
+        return self.valorComDesconto
 
 # financiamento4 = Nubank('Amarela',220,68,'Rua Grande Otelo',3)
 # financiamento4.__dict__

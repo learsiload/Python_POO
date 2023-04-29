@@ -1,6 +1,8 @@
 # HERANÇA---------------------------------------------
 # » segundo pilar
 
+# Herança Multipla: https://www.youtube.com/watch?v=X8SkYGVZqE4&ab_channel=Ignor%C3%A2nciaZero
+
 from produtos.Casa import Casa
 
 class Bradesco(Casa):

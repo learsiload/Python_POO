@@ -3,7 +3,12 @@ from bancos.Bradesco import Bradesco
 from bancos.CaixaEconomica import CaixaEconomica
 from bancos.Itau import Itau
 from bancos.Nubank import Nubank
+from bancos.Sicoob import Sicoob
 
+"""
+    Fontes: 
+        https://www.youtube.com/watch?v=t46MCgpBU90&t=4s&ab_channel=pythonando
+"""
 
 #### HERANÇA
 
@@ -29,13 +34,29 @@ cliente2.__dict__
 
 
 #### ENCAPSULAMENTO
-cliente3 = Nubank('Rosa',280,45,'Av. Ciquentenário',3)
+from bancos.Sicoob import Sicoob
+
+cliente3 = Sicoob('Rosa',280,45,'Av. Ciquentenário',3)
 # essa função __dict__ consegue mostrar o valor nas variáveis ocultas.
 cliente3.__dict__
 
 # Não é permitido acesse os atributos diretamente assim.
-cliente3.__bonus
-cliente3.__taxaFinanciamento
+cliente3.financiar(4)
+cliente3.financiar(3.5)
 
-cliente3.aplicarDesconto(5)
+cliente3.valorComDesconto
+cliente3._valorComDesconto
 
+cliente3.valorComDesconto = '15'
+cliente3._valorComDesconto = '15'
+
+
+#### SOBRECARGA DE OPERADORES
+from simulador.Calculadora import Calculadora
+
+conta1 = Calculadora()
+conta2 = Calculadora()
+conta1.cor = 'Azulão'
+conta2.cor = 'Amarelão'
+
+conta1 + conta2
